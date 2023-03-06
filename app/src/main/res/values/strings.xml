@@ -10,6 +10,5 @@
     <string name="btn_undo">Undo</string>
     <string name="btn_clear">Clear</string>
     <string name="btn_recognize_ml_kit">Recognize ML Kit</string>
-    <string name="btn_recognize_cloud_vision">Recognize Cloud Vision</string>
     <string name="greetings_title">Please draw some characters (numbers or letters) and the app will try to recognize them</string>
 </resources>

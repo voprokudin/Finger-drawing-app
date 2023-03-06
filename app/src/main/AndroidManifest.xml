@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jotit.mvc_evaluation_app" >
 
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:name=".EvaluationAppMvc"
@@ -21,8 +22,6 @@
 
             </intent-filter>
         </activity>
-
-
 
         <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES" android:value="ocr"/>
     </application>
