@@ -1,0 +1,7 @@
+<resources>
+    <dimen name="space_height">10dp</dimen>
+
+    <dimen name="toolbar_height">54dp</dimen>
+    <dimen name="toolbar_button_size">54dp</dimen>
+    <dimen name="toolbar_icon_size">24dp</dimen>
+</resources>

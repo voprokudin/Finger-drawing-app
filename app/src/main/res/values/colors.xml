@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="white" type="color">#FFFFFF</item>
+    <item name="black" type="color">#000000</item>
+
+    <item name="blue" type="color">#007dff</item>
+    <item name="red" type="color">#EE330E</item>
+    <item name="green" type="color">#1BD32C</item>
+    <color name="orange">#F99200</color>
+
+    <color name="primary_on_button">@color/white_primary</color>
+    <color name="secondary_on_button">@color/black_secondary</color>
+    <color name="white_primary">#FFFFFF</color>
+    <color name="primary_button_enabled">@color/black_secondary</color>
+    <color name="primary_button_disabled">@color/grey_secondary</color>
+    <color name="secondary_button_enabled">@color/white_primary</color>
+    <color name="secondary_button_disabled">@color/grey_secondary</color>
+    <color name="grey_secondary">#C7C7C7</color>
+    <color name="black_secondary">#111111</color>
+    <color name="primary_background">@color/white_primary</color>
+    <color name="status_bar">#33000000</color>
+</resources>

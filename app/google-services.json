@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "534838493835",
+    "project_id": "jotit-98569",
+    "storage_bucket": "jotit-98569.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534838493835:android:40bf9c45f429686c2d8a8e",
+        "android_client_info": {
+          "package_name": "com.jotit.mvc_evaluation_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "534838493835-m2pv1mj37lvdbv9i1e4kf9impln0lb2d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8BjGPhPv_Uw81fy_wUQcpscWkWJ1V0HA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "534838493835-m2pv1mj37lvdbv9i1e4kf9impln0lb2d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
