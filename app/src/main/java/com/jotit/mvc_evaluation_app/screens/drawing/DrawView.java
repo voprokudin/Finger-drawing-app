@@ -18,7 +18,7 @@ public class DrawView extends View {
     private Path mPath;
     private final Paint mPaint;
     private final ArrayList<Stroke> paths = new ArrayList<>();
-    private int currentColor;
+    private int strokeColor;
     private int strokeWidth;
     private Bitmap mBitmap;
     private Canvas mCanvas;
@@ -38,14 +38,13 @@ public class DrawView extends View {
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
         mPaint.setAlpha(0xff);
-
     }
 
     public void init(int height, int width) {
         mBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
         mCanvas = new Canvas(mBitmap);
-        currentColor = Color.GREEN;
-        strokeWidth = 20;
+        strokeColor = Color.BLACK;
+        strokeWidth = 6;
     }
 
     public void undo() {
@@ -62,15 +61,14 @@ public class DrawView extends View {
         }
     }
 
-    public Bitmap save() {
+    public Bitmap getOriginalBitmap() {
         return mBitmap;
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         canvas.save();
-        int backgroundColor = Color.WHITE;
-        mCanvas.drawColor(backgroundColor);
+        mCanvas.drawColor(Color.WHITE);
         for (Stroke fp : paths) {
             mPaint.setColor(fp.color);
             mPaint.setStrokeWidth(fp.strokeWidth);
@@ -78,31 +76,6 @@ public class DrawView extends View {
         }
         canvas.drawBitmap(mBitmap, 0, 0, mBitmapPaint);
         canvas.restore();
-    }
-
-    private void touchStart(float x, float y) {
-        mPath = new Path();
-        Stroke fp = new Stroke(currentColor, strokeWidth, mPath);
-        paths.add(fp);
-        mPath.reset();
-        mPath.moveTo(x, y);
-        mX = x;
-        mY = y;
-    }
-
-    private void touchMove(float x, float y) {
-        float dx = Math.abs(x - mX);
-        float dy = Math.abs(y - mY);
-
-        if (dx >= TOUCH_TOLERANCE || dy >= TOUCH_TOLERANCE) {
-            mPath.quadTo(mX, mY, (x + mX) / 2, (y + mY) / 2);
-            mX = x;
-            mY = y;
-        }
-    }
-
-    private void touchUp() {
-        mPath.lineTo(mX, mY);
     }
 
     @Override
@@ -125,5 +98,30 @@ public class DrawView extends View {
                 break;
         }
         return true;
+    }
+
+    private void touchStart(float x, float y) {
+        mPath = new Path();
+        Stroke fp = new Stroke(strokeColor, strokeWidth, mPath);
+        paths.add(fp);
+        mPath.reset();
+        mPath.moveTo(x, y);
+        mX = x;
+        mY = y;
+    }
+
+    private void touchMove(float x, float y) {
+        float dx = Math.abs(x - mX);
+        float dy = Math.abs(y - mY);
+
+        if (dx >= TOUCH_TOLERANCE || dy >= TOUCH_TOLERANCE) {
+            mPath.quadTo(mX, mY, (x + mX) / 2, (y + mY) / 2);
+            mX = x;
+            mY = y;
+        }
+    }
+
+    private void touchUp() {
+        mPath.lineTo(mX, mY);
     }
 }
